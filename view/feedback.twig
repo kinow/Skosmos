@@ -19,13 +19,13 @@
         {% if vocabList %}
         <input id="feedback-vocid-input" name="vocab" type="hidden"{% if request.vocabid %} value="{{ request.vocabid }}"{% endif %}>
         <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="feedback-vocid" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-label="{% trans %}Select a vocabulary{% endtrans %}">
+          <button class="btn btn-default dropdown-toggle" type="button" id="feedback-vocid" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true" aria-label="{% trans %}Select a vocabulary{% endtrans %}">
             {% if request.vocabid %}{{ request.vocab.title }}{% else %}{% trans %}Not to a specific vocabulary{% endtrans %}{% endif %}
             <span class="caret"></span>
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">{% trans %}Not to a specific vocabulary{% endtrans %}</a></li>
-            {% for option in vocabList %}<li><a href="#" data-vocid="{{ option.id }}">{{ option.title }}</a></li>{% endfor %}
+          <ul class="dropdown-menu" aria-labelledby="feedback-vocid">
+            <li class="dropdown-item"><a href="#">{% trans %}Not to a specific vocabulary{% endtrans %}</a></li>
+            {% for option in vocabList %}<li class="dropdown-item"><a href="#" data-vocid="{{ option.id }}">{{ option.title }}</a></li>{% endfor %}
           </ul>
         </div>
         {% endif %}
