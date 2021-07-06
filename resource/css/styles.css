@@ -256,8 +256,18 @@ ul {
   min-width: 160px;
 }
 
-#language > .dropdown-menu > li, #language > .dropdown-menu > li > a {
+#language > .dropdown-menu > .dropdown-item, #language > .dropdown-menu > .dropdown-item > a {
   margin: 0;
+}
+
+#language > .dropdown-menu > .dropdown-item {
+  padding: 0;
+}
+
+#language > .dropdown-menu > .dropdown-item > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
 }
 
 #language > .dropdown-toggle {
